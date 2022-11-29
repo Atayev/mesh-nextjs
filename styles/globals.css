@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+* { box-sizing: border-box }
+html, body, div, span iframe, h1, h2, h3, h4, h5, h6, p, pre,
+a, img, sub, sup, b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, footer, header, 
+main, nav, section, summary, time, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  font-family: "Lato","Roboto","Helvetica Nue",sans-serif;
+	vertical-align: baseline;
+}
+body { line-height: 1;background-color: #f0ecec; }
+ol, ul { list-style: none }
+a { text-decoration: none;color:inherit; }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
