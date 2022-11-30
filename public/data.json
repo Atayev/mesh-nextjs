@@ -1,0 +1,28 @@
+{
+    "slider":[
+        {
+            "title":"mensprocollection",
+            "imageUrl":"https://i.ibb.co/nBb1HnW/slider1.jpg"
+        },
+        {
+            "title":"mensprocollection",
+            "imageUrl":"https://i.ibb.co/R6svGrW/slider2.jpg"
+        },
+        {
+            "title":"mensprocollection",
+            "imageUrl":"https://i.ibb.co/6tjHTDX/slider3.jpg"
+        }
+    ],
+    "products":[
+        {
+            "id":"1",
+            "title":"name",
+            "images":[],
+            "price":{"azn":"44","usd":"36","eur":"38"},
+            "size":[],
+            "category":"",
+            "stock":""
+
+        }
+    ]
+}
