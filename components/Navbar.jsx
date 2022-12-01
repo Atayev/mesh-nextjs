@@ -14,16 +14,42 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
+import { useDispatch,useSelector } from "react-redux";
+import {setCurrency} from '../redux/slices/pageSlice'
 function Navbar() {
-  const [lang, setLang] = useState(null);
-  const open = Boolean(lang);
-  const id = open ? "simple-popover" : undefined;
-  const openLangMenu = (e) => {
-    setLang(e.currentTarget);
+  const dispatch = useDispatch()
+  const currency = useSelector(state => state.pageSettings.curr)
+  
+  console.log(currency)
+  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [anchorEl, setAnchorEL] = useState(null);
+  const [country, setCountry] = useState("Azerbaijan");
+
+
+  const changeCountry = (e) => {
+    setCountry(e.target.value);
   };
-  const closeLangMenu = () => {
-    setLang(null)
-}
+
+  console.log(country);
+  const open = Boolean(visible);
+  const openSettings = Boolean(isVisible);
+
+  const toggleLangMenu = (e) => {
+    setVisible(!visible);
+    setAnchorEL(e?.currentTarget);
+  };
+  const toggleSettingsMenu = (e) => {
+    setIsVisible(!isVisible);
+    setAnchorEL(e?.currentTarget);
+  };
 
   return (
     <nav className={styles.nav}>
@@ -45,18 +71,68 @@ function Navbar() {
       <div className={styles.second_nav}>
         <ul>
           <li
-            onClick={openLangMenu}
-            aria-describedby={id}
-            className={open && styles.rose_simple}
+            onClick={toggleLangMenu}
+            className={open ? styles.rose_simple : undefined}
           >
             <LanguageOutlinedIcon />
           </li>
-          <Pop id={id} open={open} lang={lang} closeLangMenu={closeLangMenu} />
-          
-          
-          <li>
+          <Pop
+            visible={visible}
+            anchorEl={anchorEl}
+            closeMenu={toggleLangMenu}
+          />
+
+          <li onClick={toggleSettingsMenu}>
             <SettingsOutlinedIcon />
           </li>
+          <Popover
+            open={openSettings}
+            anchorEl={anchorEl}
+            onClose={toggleSettingsMenu}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: -235,
+            }}
+          >
+            <div>
+              <FormControl variant="standard" sx={{ m: 3, minWidth: 250 }}>
+                <InputLabel id="demo-simple-select-standard-label">
+                  Country
+                </InputLabel>
+                <Select
+                  value={country}
+                  onChange={changeCountry}
+                  label="Country"
+                >
+                  <MenuItem value="Azerbaijan">Azerbaijan</MenuItem>
+                  <MenuItem value="Russia">Russia</MenuItem>
+                  <MenuItem value="Turkey">Turkey</MenuItem>
+                </Select>
+                <FormLabel id="currency">
+                  Currency
+                </FormLabel>
+                <RadioGroup
+                  aria-labelledby="currency"
+                  name="currency"
+                  value={currency}
+                  onChange={(e) => dispatch(setCurrency({
+                    curr:e.target.value
+                  }))}
+                >
+                  <FormControlLabel
+                    value="usd"  
+                    control={<Radio />}
+                    label="USD"
+                  />
+                  <FormControlLabel
+                    value="azn"
+                    control={<Radio />}
+                    label="AZN"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
+          </Popover>
           <li>
             <FavoriteBorderOutlinedIcon />
           </li>
