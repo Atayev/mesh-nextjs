@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 import Image from 'next/image'
-import { Paper, Button, Box } from '@mui/material'
+import { Paper } from '@mui/material'
 
 function Slider({items}) {
   return (
@@ -26,8 +26,8 @@ function Slider({items}) {
         }}
       >
           {items.map(item => (
-              <Paper>
-                  <Image  src={item.imageUrl} key={item.title} width={1394} height={450} quality={100} />
+              <Paper key={item.title}>
+                  <Image  src={item.imageUrl} key={item.title} width={1394} height={450} quality={100} alt='slider' />
               </Paper>
           ))}
     </Carousel>

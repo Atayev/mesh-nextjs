@@ -25,3 +25,8 @@ table {
 	height: 100%;
 	box-sizing: content-box;
 }
+
+.MuiCircularProgress-colorPrimary{
+	color:#d8127d;
+}
+
