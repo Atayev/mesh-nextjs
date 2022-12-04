@@ -13,43 +13,15 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
+import PopSettings from "./Popover2";
 
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import { useDispatch, useSelector } from "react-redux";
-import { setCurrency } from "../redux/slices/pageSlice";
-
-export const getStaticProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await res.json();
-
-  return {
-    props: { data },
-  };
-};
-
-function Navbar({ data }) {
-  console.log(data);
-
-  const dispatch = useDispatch();
-  const currency = useSelector((state) => state.pageSettings.curr);
-
-  console.log(currency);
+function Navbar() {
+  
   const [visible, setVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [anchorEl, setAnchorEL] = useState(null);
-  const [country, setCountry] = useState("Azerbaijan");
+  
 
-  const changeCountry = (e) => {
-    setCountry(e.target.value);
-  };
-
-  console.log(country);
   const open = Boolean(visible);
   const openSettings = Boolean(isVisible);
 
@@ -96,57 +68,8 @@ function Navbar({ data }) {
           <li onClick={toggleSettingsMenu}>
             <SettingsOutlinedIcon />
           </li>
-          <Popover
-            open={openSettings}
-            anchorEl={anchorEl}
-            onClose={toggleSettingsMenu}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: -235,
-            }}
-          >
-            <div>
-              <FormControl variant="standard" sx={{ m: 3, minWidth: 250 }}>
-                <InputLabel id="demo-simple-select-standard-label">
-                  Country
-                </InputLabel>
-                <Select
-                  value={country}
-                  onChange={changeCountry}
-                  label="Country"
-                >
-                  <MenuItem value="Azerbaijan">Azerbaijan</MenuItem>
-                  <MenuItem value="Russia">Russia</MenuItem>
-                  <MenuItem value="Turkey">Turkey</MenuItem>
-                </Select>
-                <FormLabel id="currency">Currency</FormLabel>
-                <RadioGroup
-                  aria-labelledby="currency"
-                  name="currency"
-                  value={currency}
-                  onChange={(e) =>
-                    dispatch(
-                      setCurrency({
-                        curr: e.target.value,
-                      })
-                    )
-                  }
-                >
-                  <FormControlLabel
-                    value="usd"
-                    control={<Radio />}
-                    label="USD"
-                  />
-                  <FormControlLabel
-                    value="azn"
-                    control={<Radio />}
-                    label="AZN"
-                  />
-                </RadioGroup>
-              </FormControl>
-            </div>
-          </Popover>
-          <li>
+          <PopSettings visible={openSettings} anchorEl={ anchorEl } closeMenu={toggleSettingsMenu} />
+                    <li>
             <FavoriteBorderOutlinedIcon />
           </li>
           <li>

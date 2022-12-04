@@ -1,7 +1,13 @@
-.nav {
-	background:#1a1919 ;
+.nav,.nav2 {
     display: flex;
     justify-content: space-between;
+}
+.nav {
+	 background:#1a1919 ;;
+}
+.nav2 {
+	background-color: #f0ecec;
+	
 }
 .first_nav {
 	padding: 20px;
@@ -11,7 +17,7 @@
 	display: flex;
 	color: #fff;
 	align-items: center;
-	padding-left: 15px;
+	padding-left: 10px;
 }
 .first_nav>ul>li {
 	padding: 10px;
@@ -65,4 +71,9 @@
 
 .rose_simple {
     color: #d8127d;
+}
+
+
+.menuContainer {
+	color: #1a1919!important;
 }
