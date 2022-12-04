@@ -21,18 +21,29 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
-import { useDispatch,useSelector } from "react-redux";
-import {setCurrency} from '../redux/slices/pageSlice'
-function Navbar() {
-  const dispatch = useDispatch()
-  const currency = useSelector(state => state.pageSettings.curr)
-  
-  console.log(currency)
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrency } from "../redux/slices/pageSlice";
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
+};
+
+function Navbar({ data }) {
+  console.log(data);
+
+  const dispatch = useDispatch();
+  const currency = useSelector((state) => state.pageSettings.curr);
+
+  console.log(currency);
   const [visible, setVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [anchorEl, setAnchorEL] = useState(null);
   const [country, setCountry] = useState("Azerbaijan");
-
 
   const changeCountry = (e) => {
     setCountry(e.target.value);
@@ -108,19 +119,21 @@ function Navbar() {
                   <MenuItem value="Russia">Russia</MenuItem>
                   <MenuItem value="Turkey">Turkey</MenuItem>
                 </Select>
-                <FormLabel id="currency">
-                  Currency
-                </FormLabel>
+                <FormLabel id="currency">Currency</FormLabel>
                 <RadioGroup
                   aria-labelledby="currency"
                   name="currency"
                   value={currency}
-                  onChange={(e) => dispatch(setCurrency({
-                    curr:e.target.value
-                  }))}
+                  onChange={(e) =>
+                    dispatch(
+                      setCurrency({
+                        curr: e.target.value,
+                      })
+                    )
+                  }
                 >
                   <FormControlLabel
-                    value="usd"  
+                    value="usd"
                     control={<Radio />}
                     label="USD"
                   />
