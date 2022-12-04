@@ -1,0 +1,90 @@
+.footer {
+  height: 450px;
+  background-color: #1a1919;
+  margin-top: 70px;
+  font-size: 14px;
+  color: #fff;
+  font-family: Lato, Arial, Helvetica Neue, Helvetica, sans-serif !important;
+  background-image: url("https://www.meshque.com/img/background1.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: contain;
+}
+
+.flex {
+  display: flex;
+}
+
+/* border-color: hsla(0,0%,100%,.1) */
+
+.meshque_logo {
+  width: 150px;
+  height: 130px;
+  margin-bottom: 42px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  background-color: #343534;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.footer_container {
+  padding-top: 70px;
+  width: 1127px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.categories_item {
+  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
+  margin-right: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.categories_item:hover {
+  color: rgb(201, 38, 133);
+  transition: all 0.2s;
+}
+.categories {
+  display: flex;
+  margin: 13px 0;
+}
+
+.footer_navbar {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.author {
+  width: 1127px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cubics {
+  width: 120px;
+  height: 40px;
+}
+
+.author_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

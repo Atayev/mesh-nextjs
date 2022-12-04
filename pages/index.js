@@ -10,6 +10,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer";
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/data.json");
@@ -43,12 +44,13 @@ export default function Home({ slider }) {
       <Navbar />
       <Nav />
       <Slider items={slider} />
+      <Footer />
 
       <ToastContainer
         autoClose={2000}
         closeOnClick
         hideProgressBar
-        toastStyle={{ backgroundColor: '#f0ecec', color: 'black' }}  
+        toastStyle={{ backgroundColor: "#f0ecec", color: "black" }}
       />
     </div>
   );

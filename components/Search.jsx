@@ -3,13 +3,13 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 const Search = () => {
-    const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
 
   const handleSearch = () => {
-      if (query.length < 3 || query === "") {
-          toast('Please enter minimum 3 letters to search')
+    if (query.length < 3 || query === "") {
+      toast("Please enter minimum 3 letters to search");
     }
   };
 
