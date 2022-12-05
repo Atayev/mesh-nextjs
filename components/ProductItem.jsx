@@ -4,6 +4,9 @@ import styles from "../styles/Product.module.css";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 
 const ProductItem = ({ imageUrl, title, price }) => {
+
+  console.log(price)
+
   return (
     <Box className={styles.productItem}>
       <img src={imageUrl} alt="title" />
