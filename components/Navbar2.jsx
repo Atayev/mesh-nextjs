@@ -7,7 +7,7 @@ const Nav = () => {
     <Box className={styles.nav2}>
       <Box className={styles.first_nav}>
         <ul className={styles.menuContainer}>
-          <li>News</li>
+          <li>New</li>
           <li>Woman</li>
           <li>Man</li>
           <li>Kids</li>

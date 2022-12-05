@@ -55,7 +55,7 @@ function Footer() {
           <p>Powered by</p>
           <img
             className={styles.cubics}
-            src="https://www.cubics.technology/assets/img/1-01.png"
+            src="https://www.meshque.com/img/cubics-brands-white.svg"
             alt=""
           />
         </div>
