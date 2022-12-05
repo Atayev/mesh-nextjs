@@ -26,12 +26,10 @@ function Slider({ items }) {
     >
       {items.map((item) => (
         <Paper key={item.title}>
-          <Image
+          <img
             src={item.imageUrl}
             key={item.title}
-            width={1394}
-            height={450}
-            quality={100}
+            className="carouselItemImage"
             alt="slider"
           />
         </Paper>

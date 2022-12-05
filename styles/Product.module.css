@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* .main {
   width: 100%;
   height: 100vh;
@@ -9,6 +10,15 @@
   max-width: 25%;
   margin: 10px;
   overflow: hidden;
+=======
+
+.productItem {
+    position: relative;
+    color: black;
+    max-width: 22.5%;
+    overflow: hidden;
+    margin:12px;
+>>>>>>> fa08596c4303bcb36ef4eba4e3019d4ff49af7ce
 }
 
 .productItem > img {
@@ -45,11 +55,24 @@
   color: white;
 }
 
+<<<<<<< HEAD
 .hover_elements {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+=======
+  .productItemNav {
+    position: absolute;
+    font-size: 1em;
+    width: 13rem;
+    right: 10%;
+    top:80%;
+    background-color: transparent;
+    visibility: hidden;
+    color: white;
+  }
+>>>>>>> fa08596c4303bcb36ef4eba4e3019d4ff49af7ce
 
 .productItemNav {
   position: absolute;
