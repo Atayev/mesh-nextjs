@@ -10,7 +10,9 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "../components/Footer";
+import Footer from "../parts-pages/Footer";
+import ProductItem from "../components/ProductItem";
+import Products from "./products";
 
 // export const getStaticProps = async () => {
 //   const res = await fetch("http://localhost:3000/data.json");
@@ -23,20 +25,20 @@ import Footer from "../components/Footer";
 //   };
 // };
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/data.json')
-  const data = await res.json()
+  const res = await fetch("http://localhost:3000/data.json");
+  const data = await res.json();
 
   return {
     props: {
       slider: data.slider,
-      products:data.products
-    }
-  }
-}
+      products: data.products,
+    },
+  };
+};
 
-export default function Home({ slider,products }) {
+export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(products)
+  console.log(products);
   if (isLoading) {
     return (
       <Box
@@ -55,6 +57,7 @@ export default function Home({ slider,products }) {
       <Navbar />
       <Nav />
       <Slider items={slider} />
+      <Products products={products} />
       <Footer />
 
       <ToastContainer
