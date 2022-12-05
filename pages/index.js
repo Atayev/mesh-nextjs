@@ -10,25 +10,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-<<<<<<< HEAD
-import Footer from "../parts-pages/Footer";
-import ProductItem from "../components/ProductItem";
 import Products from "./products";
-
-// export const getStaticProps = async () => {
-//   const res = await fetch("http://localhost:3000/data.json");
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       slider: data.slider,
-//     },
-//   };
-// };
-=======
-import Products from "./products";
-import Footer from '../components/Footer'
->>>>>>> fa08596c4303bcb36ef4eba4e3019d4ff49af7ce
+import Footer from '../parts-pages/Footer'
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/data.json");
   const data = await res.json();
