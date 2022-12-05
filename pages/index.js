@@ -10,18 +10,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "../components/Footer";
-
-// export const getStaticProps = async () => {
-//   const res = await fetch("http://localhost:3000/data.json");
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       slider: data.slider,
-//     },
-//   };
-// };
+import Products from "./products";
+import Footer from '../components/Footer'
 export const getStaticProps = async () => {
   const res = await fetch('http://localhost:3000/data.json')
   const data = await res.json()
@@ -55,13 +45,13 @@ export default function Home({ slider,products }) {
       <Navbar />
       <Nav />
       <Slider items={slider} />
+      <Products products={products} />
       <Footer />
-
       <ToastContainer
         autoClose={2000}
         closeOnClick
         hideProgressBar
-        toastStyle={{ backgroundColor: "#f0ecec", color: "black" }}
+        toastStyle={{ backgroundColor: '#f0ecec', color: 'black' }}  
       />
     </div>
   );
