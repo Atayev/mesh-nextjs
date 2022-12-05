@@ -1,14 +1,14 @@
 import { Box } from "@mui/material";
 import Image from "next/image";
 import styles from "../styles/Product.module.css";
-import FavoriteBorderOutlinedIcon  from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 const ProductItem = ({ imageUrl, title, price }) => {
   return (
     <Box className={styles.productItem}>
           <img src={imageUrl} alt='title' />
           <Box className={styles.productItemNav} display='flex' justifyContent='center'>
           <button className={styles.productItemButton}>Add to Cart</button>
-          <FavoriteBorderOutlinedIcon />
+          <FavoriteOutlinedIcon />
           </Box>
         <Box display="flex" justifyContent="space-between">
         <p className={styles.productTitle}>{title}</p>

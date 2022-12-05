@@ -11,7 +11,8 @@ main, nav, section, summary, time, audio, video {
   font-family: "Lato","Roboto","Helvetica Nue",sans-serif;
 	vertical-align: baseline;
 }
-body { line-height: 1;background-color: #f0ecec; }
+
+body { line-height: 1;background-color: #f0ecec;}
 ol, ul { list-style: none }
 a { text-decoration: none;color:inherit; }
 table {
@@ -21,9 +22,12 @@ table {
 .carousel {
 	position: relative;
 	z-index: 1;
-	width: 100%;
+	width: 100vw;
 	height: 100%;
 	box-sizing: content-box;
+}
+.carouselItemImage {
+	width: 100vw;
 }
 
 .MuiCircularProgress-colorPrimary{
