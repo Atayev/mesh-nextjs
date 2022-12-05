@@ -6,8 +6,8 @@
     position: relative;
     color: black;
     max-width: 25%;
-    max-height: 300px;
     margin: 10px;
+    overflow: hidden;
 }
 
 .productItem>img {
@@ -23,30 +23,33 @@
 }
 
 
-.productItem:hover, .productItemButton {
+.productItem:hover .productItemNav {
     animation-name: button;
     animation-duration: .5s;
     visibility: visible;
 }
 
-@keyframes button {
-    from {
-        bottom: 0; 
-        opacity: 0;
-    }
-  
-    to {
-        bottom: 2%; 
-        opacity: 1;
-    }
+.productItemButton {
+    width: 20rem;
+    height: 2rem;
+    background-color: #f0ecec;
+    border: none;
+    border-radius:5px;
+}
+
+
+  .productItemNav {
+    position: absolute;
+    font-size: 1em;
+    width: 13rem;
+    right: 10%;
+    left: 5%;
+    top:55%;
+    background-color: transparent;
+    visibility: hidden;
+    color: white;
   }
 
-  .productItemButton {
-    position: absolute;
-    font-size: 0.9rem;
-    width: 13rem;
-    bottom:2%;
-    right: 12%;
-    background-color: #fff;
-    visibility: visible;
+  .productItemNav>svg {
+    margin: 5px;
   }
