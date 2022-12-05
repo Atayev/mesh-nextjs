@@ -16,11 +16,9 @@ import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import PopSettings from "./Popover2";
 
 function Navbar() {
-  
   const [visible, setVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [anchorEl, setAnchorEL] = useState(null);
-  
 
   const open = Boolean(visible);
   const openSettings = Boolean(isVisible);
@@ -68,8 +66,12 @@ function Navbar() {
           <li onClick={toggleSettingsMenu}>
             <SettingsOutlinedIcon />
           </li>
-          <PopSettings visible={openSettings} anchorEl={ anchorEl } closeMenu={toggleSettingsMenu} />
-                    <li>
+          <PopSettings
+            visible={openSettings}
+            anchorEl={anchorEl}
+            closeMenu={toggleSettingsMenu}
+          />
+          <li>
             <FavoriteBorderOutlinedIcon />
           </li>
           <li>
