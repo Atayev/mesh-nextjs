@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Products from "./products";
 import Footer from '../parts-pages/Footer'
+
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/data.json");
   const data = await res.json();
