@@ -19,40 +19,47 @@
     ],
     "products":[
         {
-            "id":"1",
+            "id":1,
             "title":"name",
             "images":"https://meshque.com/cdn/storage/product_images/vbKjTa7pbxuETLFpN/HD/vbKjTa7pbxuETLFpN.png",
             "price":{"azn":"44","usd":"36","eur":"38"},
             "size":["s","m","l","xl"],
             "category":"mensclothing",
-            "stock":"45"
+            "stock":"45",
+            "color":["black","white","gray","blue"]
         },
         {
-            "id":"1",
+            "id":2,
             "title":"name",
             "images":"https://meshque.com/cdn/storage/product_images/ckP6YamYuz8R57wBH/HD/ckP6YamYuz8R57wBH.png",
             "price":{"azn":"34","usd":"36","eur":"38"},
             "size":["s","m","l","xl"],
             "category":"mensclothing",
-            "stock":"45"
+            "stock":"45",
+            "color":["black","white","gray","blue"]
+
         },
         {
-            "id":"1",
+            "id":3,
             "title":"name",
             "images":"https://meshque.com/cdn/storage/product_images/b9oNH8S8Mv2N6JQ3F/HD/b9oNH8S8Mv2N6JQ3F.png",
             "price":{"azn":"34","usd":"36","eur":"38"},
             "size":["s","m","l","xl"],
             "category":"mensclothing",
-            "stock":"45"
+            "stock":"45",
+            "color":["black","white","gray","blue"]
+
         },
         {
-            "id":"1",
+            "id":4,
             "title":"name",
             "images":"https://meshque.com/cdn/storage/product_images/jqS3GniH5LHSz4Tyi/HD/jqS3GniH5LHSz4Tyi.jpeg",
             "price":{"azn":"34","usd":"36","eur":"38"},
             "size":["s","m","l","xl"],
             "category":"mensclothing",
-            "stock":"45"
+            "stock":"45",
+            "color":["black","white","gray","blue"]
+
         }
     ]
 }

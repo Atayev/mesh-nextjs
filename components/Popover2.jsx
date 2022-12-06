@@ -19,7 +19,6 @@ const PopSettings = ({ visible, anchorEl, closeMenu }) => {
   const dispatch = useDispatch();
   const currency = useSelector((state) => state.pageSettings.curr);
   const [country, setCountry] = useState("Azerbaijan");
-  console.log(country);
 
   const changeCountry = (e) => {
     setCountry(e.target.value);

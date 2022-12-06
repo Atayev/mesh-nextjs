@@ -1,21 +1,27 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import Link from "next/link";
 import Image from "next/image";
+
 import styles from "../styles/Nav.module.css";
+
 import Pop from "./Popover";
-import Popover from "@mui/material/Popover";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+import PopSettings from "./Popover2";
+import CustomizedBagde from "./CustomizedBadge";
+
 
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
-import PopSettings from "./Popover2";
 
 function Navbar() {
+  const {cart,wishList} = useSelector(state => state.cart)
+
+
+
   const [visible, setVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [anchorEl, setAnchorEL] = useState(null);
@@ -72,10 +78,15 @@ function Navbar() {
             closeMenu={toggleSettingsMenu}
           />
           <li>
-            <FavoriteBorderOutlinedIcon />
+          <CustomizedBagde content={wishList.length}>
+              <FavoriteBorderOutlinedIcon />
+            </CustomizedBagde>
           </li>
           <li>
+            <CustomizedBagde content={cart.length}>
             <ShoppingBasketOutlinedIcon />
+            </CustomizedBagde>
+
           </li>
           <li>
             <LoginOutlinedIcon />
