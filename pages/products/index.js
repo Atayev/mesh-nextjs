@@ -7,9 +7,9 @@ const Products = ({ products }) => {
   return (
     <Container maxwidth="xs">
       <Box className={styles.main} display="flex"  flexWrap='wrap' justifyContent='center' alignItems='center'>
-        {products?.map((product) => (
+        {products?.map((product, i) => (
             <ProductItem
-            key={product.id}
+            key={i}
             imageUrl={product.images}
             title={product.title}
             price={product.price.azn}

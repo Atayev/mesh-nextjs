@@ -1,4 +1,4 @@
-
+/* 
 .productItem {
     position: relative;
     color: black;
@@ -7,33 +7,39 @@
     margin:12px;
 }
 
-.productItem>img {
-    width: 100%;
-    border-radius: 10px;
+.productItem > img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.productTitle,.productPrice {
-    font-weight: bolder;
+.productTitle,
+.productPrice {
+  font-weight: bolder;
 }
 .productPrice {
-    color: #d8127d;
+  color: #d8127d;
 }
 
-
 .productItem:hover .productItemNav {
-    animation-name: button;
-    animation-duration: .5s;
-    visibility: visible;
+  animation-name: button;
+  animation-duration: 0.5s;
+  visibility: visible;
 }
 
 .productItemButton {
-    width: 20rem;
-    height: 2rem;
-    background-color: #f0ecec;
-    border: none;
-    border-radius:5px;
+  width: 20rem;
+  height: 2rem;
+  background-color: #f0ecec;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 20px 15px;
 }
 
+.productItemButton:hover {
+  background-color: #333;
+  color: white;
+}
 
   .productItemNav {
     position: absolute;
@@ -46,6 +52,93 @@
     color: white;
   }
 
-  .productItemNav>svg {
-    margin: 5px;
-  }
+.productItemNav {
+  position: absolute;
+  font-size: 1em;
+  width: 13rem;
+  right: 10%;
+  top: 55%;
+  background-color: transparent;
+  visibility: hidden;
+  color: white;
+}
+
+.productItemNav > svg {
+  margin: 5px;
+}  */
+
+.productItem {
+  color: black;
+  max-width: 25%;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.productItem > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.productTitle,
+.productPrice {
+  font-weight: bolder;
+}
+
+.productPrice {
+  color: #d8127d;
+}
+
+.productItemNav {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  font-size: 12px;
+  display: none;
+}
+
+.productItem:hover .productItemNav {
+  font-size: 1em;
+  background-color: transparent;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+}
+
+.productItemButton {
+  width: 80%;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  background-color: #f0ecec;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-weight: 700;
+  padding: 1em 0;
+}
+
+.productItemButton:hover {
+  background-color: #333;
+  color: white;
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 15%);
+}

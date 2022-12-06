@@ -11,22 +11,22 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Products from "./products";
-import Footer from '../components/Footer'
+import Footer from '../parts-pages/Footer'
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/data.json')
-  const data = await res.json()
+  const res = await fetch("http://localhost:3000/data.json");
+  const data = await res.json();
 
   return {
     props: {
       slider: data.slider,
-      products:data.products
-    }
-  }
-}
+      products: data.products,
+    },
+  };
+};
 
-export default function Home({ slider,products }) {
+export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(products)
+  console.log(products);
   if (isLoading) {
     return (
       <Box
