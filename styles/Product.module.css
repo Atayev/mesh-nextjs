@@ -1,75 +1,6 @@
-/* 
-.productItem {
-    position: relative;
-    color: black;
-    max-width: 22.5%;
-    overflow: hidden;
-    margin:12px;
-}
-
-.productItem > img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.productTitle,
-.productPrice {
-  font-weight: bolder;
-}
-.productPrice {
-  color: #d8127d;
-}
-
-.productItem:hover .productItemNav {
-  animation-name: button;
-  animation-duration: 0.5s;
-  visibility: visible;
-}
-
-.productItemButton {
-  width: 20rem;
-  height: 2rem;
-  background-color: #f0ecec;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  padding: 20px 15px;
-}
-
-.productItemButton:hover {
-  background-color: #333;
-  color: white;
-}
-
-  .productItemNav {
-    position: absolute;
-    font-size: 1em;
-    width: 13rem;
-    right: 10%;
-    top:80%;
-    background-color: transparent;
-    visibility: hidden;
-    color: white;
-  }
-
-.productItemNav {
-  position: absolute;
-  font-size: 1em;
-  width: 13rem;
-  right: 10%;
-  top: 55%;
-  background-color: transparent;
-  visibility: hidden;
-  color: white;
-}
-
-.productItemNav > svg {
-  margin: 5px;
-}  */
-
 .productItem {
   color: black;
-  max-width: 25%;
+  max-width: 22.5%;
   margin: 10px;
   position: relative;
   cursor: pointer;
@@ -101,7 +32,7 @@
 .productItem:hover .productItemNav {
   font-size: 1em;
   background-color: transparent;
-  color: black;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,6 +60,10 @@
   color: white;
 }
 
+.productItemNav>svg:hover {
+  color: #333;
+}
+
 .favorite {
   display: flex;
   align-items: center;
@@ -136,7 +71,7 @@
   width: 40px;
   height: 40px;
   background-color: white;
-  color: black;
+  color: #fff;
   border: none;
   padding: 10px;
   border-radius: 50%;
