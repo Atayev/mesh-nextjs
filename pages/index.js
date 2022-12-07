@@ -22,9 +22,7 @@ export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
   console.log(products);
   if (isLoading) {
-    return (
-     <Loader />
-    );
+    return <Loader />;
   }
 
   return (
