@@ -5,6 +5,7 @@ import styles from "../styles/Nav.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../redux/slices/pageSlice";
+
 const Pop = ({ visible, anchorEl, closeMenu }) => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.pageSettings.lang);

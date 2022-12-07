@@ -1,12 +1,8 @@
 import Popover from "@mui/material/Popover";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import styles from "../styles/Nav.module.css";
-import Image from "next/image";
-
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";

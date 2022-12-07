@@ -2,10 +2,10 @@ import Head from "next/head";
 import Slider from "../components/Slider";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-
 import Products from "./products";
 import Layout from "../components/Layout";
 import Loader from "../components/Loader";
+
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:3000/data.json");
   const data = await res.json();

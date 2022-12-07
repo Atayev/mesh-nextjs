@@ -4,7 +4,8 @@ import styles from "../styles/Product.module.css";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { addToCart } from "../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
+
 const ProductItem = ({ imageUrl, title, price, id }) => {
   const dispatch = useDispatch();
   const handleDispatch = () => {
@@ -16,7 +17,7 @@ const ProductItem = ({ imageUrl, title, price, id }) => {
         price,
       })
     );
-    toast.success('Product succesfully added to your cart ')
+    toast.success("Product succesfully added to your cart ");
   };
 
   return (
