@@ -1,9 +1,8 @@
 import { Box } from "@mui/material";
-import Image from "next/image";
 import styles from "../styles/Product.module.css";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
-import { addToCart } from "../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 import {toast} from 'react-toastify'
 const ProductItem = ({ imageUrl, title, price, id }) => {
   const dispatch = useDispatch();

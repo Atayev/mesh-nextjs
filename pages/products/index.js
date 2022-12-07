@@ -1,12 +1,13 @@
 import ProductItem from "../../components/ProductItem";
 import { Container, Box } from "@mui/material";
 import styles from "../../styles/Product.module.css";
-
+import DividerCustom from '../../components/Divider'
 const Products = ({ products }) => {
   console.log(products);
 
   return (
     <Container maxwidth="xs">
+      <DividerCustom>Bestsellers</DividerCustom>
       <Box
         className={styles.main}
         display="flex"

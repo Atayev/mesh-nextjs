@@ -19,6 +19,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.divider {
+	margin: 25px;
+}
+.dividerText {
+		font-size: 2em;
+		padding: 10px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 1px 1px #111, inset 0 0 4px rgba(0,0,0,0.3);
+  }
+ ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background:#d8127d;
+    box-shadow: inset 0 0 1px 1px #d8127d;
+  }
+
 .carousel {
 	position: relative;
 	z-index: 1;
