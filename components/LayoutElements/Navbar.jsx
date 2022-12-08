@@ -1,34 +1,30 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
 import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image'
 
-import styles from "../styles/Nav.module.css";
+import styles from "../../styles/Nav.module.css";
 
-import Pop from "./Popover";
-import PopSettings from "./Popover2";
+import Pop from "../Popover";
 import CustomizedBagde from "./CustomizedBadge";
 
+import {
+  LanguageOutlined,
+  SettingsOutlined,
+  FavoriteBorderOutlined,
+  ShoppingBasketOutlined,
+  LoginOutlined,
+} from "@mui/icons-material/";
 
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
-import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
+import LangMenu from "../PopMenus/LangMenu";
+import SettingsMenu from "../PopMenus/SettingsMenu";
 
 function Navbar() {
-  const {cart,wishList} = useSelector(state => state.cart)
-
-
+  const { cart, wishList } = useSelector((state) => state.cart);
 
   const [visible, setVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [anchorEl, setAnchorEL] = useState(null);
-
-  const open = Boolean(visible);
-  const openSettings = Boolean(isVisible);
-
   const toggleLangMenu = (e) => {
     setVisible(!visible);
     setAnchorEL(e?.currentTarget);
@@ -59,38 +55,45 @@ function Navbar() {
         <ul>
           <li
             onClick={toggleLangMenu}
-            className={open ? styles.rose_simple : undefined}
+            className={visible ? styles.rose_simple : undefined}
           >
-            <LanguageOutlinedIcon />
+            <LanguageOutlined />
           </li>
           <Pop
             visible={visible}
             anchorEl={anchorEl}
             closeMenu={toggleLangMenu}
+            children={<LangMenu />}
+            position={-35}
           />
 
-          <li onClick={toggleSettingsMenu}>
-            <SettingsOutlinedIcon />
+          <li
+            onClick={toggleSettingsMenu}
+            className={isVisible ? styles.rose_simple : undefined}
+          >
+            <SettingsOutlined />
           </li>
-          <PopSettings
-            visible={openSettings}
+          <Pop
+            visible={isVisible}
             anchorEl={anchorEl}
             closeMenu={toggleSettingsMenu}
+            children={<SettingsMenu />}
+            position={-235}
           />
           <li>
-          <CustomizedBagde content={wishList.length}>
-              <FavoriteBorderOutlinedIcon />
+            <CustomizedBagde content={wishList.length}>
+              <FavoriteBorderOutlined />
             </CustomizedBagde>
           </li>
           <li>
             <CustomizedBagde content={cart.length}>
-            <ShoppingBasketOutlinedIcon />
+              <ShoppingBasketOutlined />
             </CustomizedBagde>
-
           </li>
           <li>
-            <LoginOutlinedIcon />
+            <LoginOutlined />
           </li>
+          
         </ul>
       </div>
     </nav>

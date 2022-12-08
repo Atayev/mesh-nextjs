@@ -5,16 +5,19 @@ import { useState } from "react";
 import { initMongoose } from "../utils/dbConnect.js";
 
 import Products from "./products";
-import Layout from "../components/Layout";
-import Loader from "../components/Loader";
+import Layout from "../components/LayoutElements/Layout";
+import Loader from "../components/LayoutElements/Loader";
 import { getAllProducts } from "./api/products";
+import { getSliderData } from "./api/slider";
 
 export const getServerSideProps = async () => {
   await initMongoose();
   const data = await getAllProducts();
+  const sliderData = await getSliderData();
   return {
     props: {
       products: JSON.parse(JSON.stringify(data)),
+      slider: JSON.parse(JSON.stringify(sliderData)),
     },
   };
 };
@@ -33,7 +36,9 @@ export const getServerSideProps = async () => {
 
 export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(products);
+  console.log(slider[0].imageUrl);
+
+  const imageUrls = slider[0].imageUrl;
   if (isLoading) {
     return <Loader />;
   }
@@ -41,7 +46,7 @@ export default function Home({ slider, products }) {
   return (
     <div className={styles.main}>
       <Layout>
-        {/* <Slider items={slider} /> */}
+        <Slider items={slider} images={imageUrls} />
         <Products products={products} />
       </Layout>
     </div>
