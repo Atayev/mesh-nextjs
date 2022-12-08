@@ -5,8 +5,8 @@ import { useState } from "react";
 import { initMongoose } from "../utils/dbConnect.js";
 
 import Products from "./products";
-import Layout from "../components/Layout";
-import Loader from "../components/Loader";
+import Layout from "../components/LayoutElements/Layout";
+import Loader from "../components/LayoutElements/Loader";
 import { getAllProducts } from "./api/products";
 import { getSliderData } from "./api/slider";
 
@@ -36,9 +36,9 @@ export const getServerSideProps = async () => {
 
 export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(slider[0].imageUrl)
+  console.log(slider[0].imageUrl);
 
-  const imageUrls = slider[0].imageUrl
+  const imageUrls = slider[0].imageUrl;
   if (isLoading) {
     return <Loader />;
   }
@@ -46,7 +46,7 @@ export default function Home({ slider, products }) {
   return (
     <div className={styles.main}>
       <Layout>
-        <Slider items={slider} images={ imageUrls } />
+        <Slider items={slider} images={imageUrls} />
         <Products products={products} />
       </Layout>
     </div>

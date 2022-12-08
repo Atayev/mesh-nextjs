@@ -1,7 +1,7 @@
 import ProductItem from "../../components/ProductItem";
 import { Container, Box } from "@mui/material";
 import styles from "../../styles/Product.module.css";
-import DividerCustom from '../../components/Divider'
+import DividerCustom from '../../components/LayoutElements/Divider'
 const Products = ({ products }) => {
 
   return (

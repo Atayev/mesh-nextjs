@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
-import styles from "../styles/Nav.module.css";
-import Search from "./Search";
+import styles from "../../styles/Nav.module.css";
+import Search from "../Search";
 
 const Nav = () => {
   return (

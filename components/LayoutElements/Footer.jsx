@@ -4,7 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YoutubeIcon from "@mui/icons-material/Youtube";
-import styles from "../styles/Footer.module.css";
+import styles from "../../styles/Footer.module.css";
 import Box from "@mui/material/Box";
 
 function Footer() {

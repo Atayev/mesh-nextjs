@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { persistor,store } from '../redux/store'
 import { PersistGate } from 'redux-persist/integration/react';
 
-import Loader from '../components/Loader';
+import Loader from '../components/LayoutElements/Loader';
 
 function MyApp({ Component, pageProps }) {
   return (
