@@ -3,7 +3,7 @@ import Carousel from "react-material-ui-carousel";
 import Image from "next/image";
 import { Paper } from "@mui/material";
 
-function Slider({ items }) {
+function Slider({ items,images }) {
   return (
     <Carousel
       autoPlay
@@ -24,16 +24,17 @@ function Slider({ items }) {
         },
       }}
     >
-      {items.map((item) => (
-        <Paper key={item.title}>
+        {images.map((image => (
+          <Paper key={items[0].title}>
           <img
-            src={item.imageUrl}
-            key={item.title}
-            className="carouselItemImage"
-            alt="slider"
-          />
+           src={image}
+           key={image}
+           className="carouselItemImage"
+           alt="slider"
+         />
         </Paper>
-      ))}
+        )))}
+         
     </Carousel>
   );
 }

@@ -3,7 +3,6 @@ import { Container, Box } from "@mui/material";
 import styles from "../../styles/Product.module.css";
 import DividerCustom from '../../components/Divider'
 const Products = ({ products }) => {
-  console.log(products);
 
   return (
     <Container maxwidth="xs">
@@ -17,8 +16,8 @@ const Products = ({ products }) => {
       >
         {products?.map((product) => (
           <ProductItem
-            key={product.id}
-            id={product.id}
+            key={product._id}
+            id={product._id}
             imageUrl={product.images}
             title={product.title}
             price={product.price.azn}
@@ -26,8 +25,8 @@ const Products = ({ products }) => {
         ))}
         {products?.map((product) => (
           <ProductItem
-            key={product.id}
-            id={product.id}
+            key={product._id}
+            id={product._id}
             imageUrl={product.images}
             title={product.title}
             price={product.price.azn}
