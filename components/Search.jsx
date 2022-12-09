@@ -22,6 +22,7 @@ const Search = () => {
         display: "flex",
         alignItems: "center",
         width: 200,
+        borderRadius: "50px",
       }}
     >
       <InputBase

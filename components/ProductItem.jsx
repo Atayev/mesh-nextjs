@@ -4,6 +4,7 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
 import {toast} from 'react-toastify'
+
 const ProductItem = ({ imageUrl, title, price, id }) => {
   const dispatch = useDispatch();
   const handleDispatch = () => {
