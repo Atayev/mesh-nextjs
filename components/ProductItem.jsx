@@ -4,19 +4,13 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
 import {toast} from 'react-toastify'
-const ProductItem = ({ imageUrl, title, price, id }) => {
+import ProductModal from "./ProductModal";
+import { useState } from "react";
+const ProductItem = ({ imageUrl, title, price, id,defaultSize,defaultColor }) => {
+  const [open,setOpen]=useState(false)
+
   const dispatch = useDispatch();
-  const handleDispatch = () => {
-    dispatch(
-      addToCart({
-        id,
-        title,
-        imageUrl,
-        price,
-      })
-    );
-    toast.success('Product succesfully added to your cart ')
-  };
+ 
 
   return (
     <Box className={styles.productItem}>
@@ -26,9 +20,10 @@ const ProductItem = ({ imageUrl, title, price, id }) => {
         display="flex"
         justifyContent="center"
       >
-        <button className={styles.productItemButton} onClick={handleDispatch}>
+        <button className={styles.productItemButton} onClick={()=>setOpen(!open)}>
           Add to Cart
         </button>
+        <ProductModal open={open} handleClose={() => setOpen(!open)} defaultSize={defaultSize} defaultColor={defaultColor} />
         <FavoriteOutlinedIcon />
       </Box>
       <Box display="flex" justifyContent="space-between">

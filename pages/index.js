@@ -11,7 +11,7 @@ import { getAllProducts } from "./api/products";
 import { getSliderData } from "./api/slider";
 
 export const getServerSideProps = async () => {
-  await initMongoose();
+  await initMongoose(); 
   const data = await getAllProducts();
   const sliderData = await getSliderData();
   return {
@@ -36,9 +36,9 @@ export const getServerSideProps = async () => {
 
 export default function Home({ slider, products }) {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(slider[0].imageUrl);
-
   const imageUrls = slider[0].imageUrl;
+
+  
   if (isLoading) {
     return <Loader />;
   }

@@ -7,10 +7,11 @@ const ProductSchema = new Schema({
   category: String,
   subcategory: String,
   stock: Number,
-  color: Array,
-  size: Array,
+  defaultSize: String,
+  defaultColor: String,
+  variants: Array,
 });
 
-const Product = models?.Product || model("Product", ProductSchema);
+const Product = models?.Product || model("product", ProductSchema);
 
 export default Product;

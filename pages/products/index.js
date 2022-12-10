@@ -21,15 +21,8 @@ const Products = ({ products }) => {
             imageUrl={product.images}
             title={product.title}
             price={product.price.azn}
-          />
-        ))}
-        {products?.map((product) => (
-          <ProductItem
-            key={product._id}
-            id={product._id}
-            imageUrl={product.images}
-            title={product.title}
-            price={product.price.azn}
+            defaultColor={product.defaultColor}
+            defaultSize={product.defaultSize}
           />
         ))}
       </Box>
