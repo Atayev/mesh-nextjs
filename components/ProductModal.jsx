@@ -7,7 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import styles from "../styles/Product.module.css";
-import { useDispatch } from "react-redux/es/exports";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import DividerCustom from "./LayoutElements/Divider";
 import { toast } from "react-toastify";
@@ -15,13 +15,10 @@ import { addToCart } from "../redux/slices/cartSlice";
 
 function ProductModal({ productData, open, handleClose }) {
   const dispatch = useDispatch();
-  const [color, setColor] = useState("defaultColor");
-  const [size, setSize] = useState("");
-  const { variants } = productData;
-  const variant = {
-    color,
-    size,
-  };
+  const { variants, defaultColor, defaultSize } = productData;
+  const [color, setColor] = useState(defaultColor);
+  const [size, setSize] = useState(defaultSize);
+  const variant = { color, size };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,26 +28,19 @@ function ProductModal({ productData, open, handleClose }) {
     );
     console.log(selectedVariant);
     if (selectedVariant) {
-        // delete productData.variants
-        // productData.id = selectedVariant[0]._id
-        // productData.defaultColor = selectedVariant[0].defaultColor
-        // productData.defaultSize = selectedVariant[0].defaultSize
       const dataToPass = {
         ...productData,
-      }
-      delete dataToPass.variants
-      dataToPass.id = selectedVariant[0]._id
-      dataToPass.defaultColor = selectedVariant[0].defaultColor
-      dataToPass.defaultSize = selectedVariant[0].defaultSize
-      dispatch(
-        addToCart({dataToPass})
-      )
-      handleClose()
-      console.log(dataToPass)
-      return dataToPass
-    } 
+      };
+      delete dataToPass.variants;
+      dataToPass.id = selectedVariant[0]._id;
+      dataToPass.defaultColor = selectedVariant[0].defaultColor;
+      dataToPass.defaultSize = selectedVariant[0].defaultSize;
+      dispatch(addToCart({ dataToPass }));
+      handleClose();
+      console.log(dataToPass);
+      return dataToPass;
+    }
   };
-
   return (
     <Modal open={open} onClose={handleClose}>
       <Box className={styles.modal}>

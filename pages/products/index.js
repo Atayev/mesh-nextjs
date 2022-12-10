@@ -1,9 +1,9 @@
 import ProductItem from "../../components/ProductItem";
 import { Container, Box } from "@mui/material";
 import styles from "../../styles/Product.module.css";
-import DividerCustom from '../../components/LayoutElements/Divider'
-const Products = ({ products }) => {
+import DividerCustom from "../../components/LayoutElements/Divider";
 
+const Products = ({ products }) => {
   return (
     <Container maxwidth="xs">
       <DividerCustom>Bestsellers</DividerCustom>
