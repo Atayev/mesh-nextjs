@@ -23,6 +23,7 @@ const Products = ({ products }) => {
             price={product.price.azn}
             defaultColor={product.defaultColor}
             defaultSize={product.defaultSize}
+            variants={product.variants}
           />
         ))}
       </Box>

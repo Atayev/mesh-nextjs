@@ -89,3 +89,10 @@
   box-shadow: 24px;
   padding: 4px;
 }
+.modalTitle {
+  border-bottom: 1px solid black;
+}
+.formLabel {
+  color: black;
+  font-size: 1em;
+}
