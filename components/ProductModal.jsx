@@ -26,7 +26,6 @@ function ProductModal({ productData, open, handleClose }) {
       (vari) =>
         vari.defaultColor === variant.color && vari.defaultSize === variant.size
     );
-    console.log(selectedVariant);
     if (selectedVariant) {
       const dataToPass = {
         ...productData,
@@ -35,7 +34,11 @@ function ProductModal({ productData, open, handleClose }) {
       dataToPass.id = selectedVariant[0]._id;
       dataToPass.defaultColor = selectedVariant[0].defaultColor;
       dataToPass.defaultSize = selectedVariant[0].defaultSize;
-      dispatch(addToCart({ dataToPass }));
+      const { defaultSize, defaultColor, id, imageUrl, title, price } =
+        dataToPass;
+      dispatch(
+        addToCart({ defaultSize, defaultColor, id, imageUrl, title, price })
+      );
       handleClose();
       console.log(dataToPass);
       return dataToPass;
