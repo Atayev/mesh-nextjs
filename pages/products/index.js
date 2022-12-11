@@ -2,6 +2,25 @@ import ProductItem from "../../components/ProductItem";
 import { Container, Box } from "@mui/material";
 import styles from "../../styles/Product.module.css";
 import DividerCustom from "../../components/LayoutElements/Divider";
+import Link from 'next/link'
+// export const getStaticPaths = async () => {
+//   await initMongoose(); 
+//   const data = await getAllProducts();
+//   const paths = data.map((product) => {
+//     return {
+//       params: {
+//         id:product.id.toString()
+//       }
+//     }
+//   })
+//   return {
+//     paths,
+//     fallback:false
+//   };
+// };
+
+
+
 
 const Products = ({ products }) => {
   return (
@@ -15,6 +34,7 @@ const Products = ({ products }) => {
         alignItems="center"
       >
         {products?.map((product) => (
+          <Link href={`/products/${product._id}`} className={styles.link}>
           <ProductItem
             key={product._id}
             id={product._id}
@@ -25,6 +45,7 @@ const Products = ({ products }) => {
             defaultSize={product.defaultSize}
             variants={product.variants}
           />
+          </Link>
         ))}
       </Box>
     </Container>

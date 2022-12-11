@@ -5,8 +5,8 @@ export async function getAllProducts() {
   return Product.find().exec();
 }
 
-export async function getProductById(req,res) {
-  return Product.findById(req.params.id).exec()
+export async function getProductById(id) {
+  return Product.findById(id).exec()
 }
 
 export default async function handle(req, res) {

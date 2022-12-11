@@ -96,3 +96,8 @@
   color: black;
   font-size: 1em;
 }
+
+.link {
+  width: 100%;
+  display: contents;
+}

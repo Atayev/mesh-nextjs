@@ -1,4 +1,4 @@
-import { model, models, Schema } from "mongoose";
+import { models, model, Schema } from "mongoose";
 
 const ProductSchema = new Schema({
   title: String,
@@ -12,6 +12,6 @@ const ProductSchema = new Schema({
   variants: Array,
 });
 
-const Product = models.Product || model("Product", ProductSchema);
+const Product = models?.Product || model("Product", ProductSchema);
 
 export default Product;
