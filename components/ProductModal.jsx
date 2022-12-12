@@ -18,10 +18,10 @@ function ProductModal({ productData, open, handleClose }) {
   const { variants, defaultColor, defaultSize } = productData;
   const [color, setColor] = useState(defaultColor);
   const [size, setSize] = useState(defaultSize);
-  const variant = { color, size };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+    const variant = { color, size };
     const selectedVariant = variants.filter(
       (vari) =>
         vari.defaultColor === variant.color && vari.defaultSize === variant.size

@@ -101,3 +101,51 @@
   width: 100%;
   display: contents;
 }
+.mainProduct {
+  margin: 50px;
+}
+.mainProduct_images {
+  width: 30%;
+  height: fit-content;
+}
+.mainProduct_image {
+  width: 100%;
+  height: fit-content;
+}
+
+
+.mainProduct_info {
+  margin-left: 20px;
+}
+
+.customRadio {
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.customRadio > span {
+  margin: 7px 5px;
+}
+
+
+
+.btn {
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid #d8127d;
+}
+
+.amountField {
+  margin-top: 10px;
+}
+.amountField> span {
+  margin: 10px 5px;
+}
