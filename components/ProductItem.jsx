@@ -6,8 +6,9 @@ import { addToCart } from "../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 import ProductModal from "./ProductModal";
 import { useState } from "react";
+import Link from 'next/link'
 const ProductItem = ({
-  imageUrl,
+  images,
   title,
   price,
   id,
@@ -17,7 +18,7 @@ const ProductItem = ({
 }) => {
   const [open, setOpen] = useState(false);
   const productData = {
-    imageUrl,
+    images,
     title,
     price,
     id,
@@ -25,11 +26,12 @@ const ProductItem = ({
     defaultColor,
     variants,
   }
-  const dispatch = useDispatch();
 
   return (
     <Box className={styles.productItem}>
-      <img src={imageUrl} alt="title" />
+        <Link href={`/products/${id}`} className={styles.link}>
+        <img src={images} alt="title" />
+        </Link>
       <Box
         className={styles.productItemNav}
         display="flex"

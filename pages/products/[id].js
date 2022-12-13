@@ -2,7 +2,7 @@ import { getProductById } from "../api/products";
 import Layout from "../../components/LayoutElements/Layout";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { AddOutlined, RemoveOutlined } from "@mui/icons-material";
+import { AddOutlined, RemoveOutlined,FavoriteBorderOutlined } from "@mui/icons-material";
 import { addToCart } from "../../redux/slices/cartSlice";
 import styles from "../../styles/Product.module.css";
 import { useState } from "react";
@@ -40,7 +40,7 @@ const ProductPage = ({ product }) => {
   const [color, setColor] = useState(colors[0].color);
   let [quantity, setQuantity] = useState(1);
   const { variants, defaultColor, defaultSize } = product;
-
+  const totalPrice = product.price.usd * quantity
   const handleColor = (color) => {
     setCurrentColor(color.id);
     setColor(color.value);
@@ -65,20 +65,19 @@ const ProductPage = ({ product }) => {
       dataToPass.id = selectedVariant[0]._id;
       dataToPass.defaultColor = selectedVariant[0].defaultColor;
       dataToPass.defaultSize = selectedVariant[0].defaultSize;
-      const { defaultSize, defaultColor, id, imageUrl, title, price } =
+      const { defaultSize, defaultColor, id, images, title, price } =
         dataToPass;
       dispatch(
         addToCart({
           defaultSize,
           defaultColor,
           id,
-          imageUrl,
+          images,
           title,
           price,
           quantity
-        })
+        },)
       );
-      console.log(dataToPass);
       return dataToPass;
     }
   };
@@ -145,7 +144,7 @@ const ProductPage = ({ product }) => {
                 <span>Amount :</span>
                 <IconButton
                   onClick={
-                    !quantity <= 0
+                    quantity > 0
                       ? () => setQuantity(--quantity)
                       : () => setQuantity(1)
                   }
@@ -169,10 +168,15 @@ const ProductPage = ({ product }) => {
                 </IconButton>
               </Box>
 
-              <Box className={styles.productPrice}>
-                Total Price : {product.price.usd * quantity} $
+              <Box className={styles.productPrice}  style={{ marginTop: 50 }}>
+                Total Price : {totalPrice} $
               </Box>
-              <button onClick={handleClick}>Add to cart</button>
+              <Box display='flex'>
+              <button onClick={handleClick} className={styles.productPage_btn}>Add to cart</button>
+              <IconButton>
+                  <FavoriteBorderOutlined />
+              </IconButton>
+              </Box>
             </Box>
           </Box>
         </Box>

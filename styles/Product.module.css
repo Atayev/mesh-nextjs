@@ -6,10 +6,6 @@
   cursor: pointer;
 }
 
-.productItem > img {
-  width: 100%;
-  border-radius: 10px;
-}
 
 .productTitle,
 .productPrice {
@@ -98,10 +94,16 @@
 }
 
 .link {
-  width: 100%;
   display: contents;
+
+}
+.link>img {
+  width: 100%;
+  border-radius: 15px;
+
 }
 .mainProduct {
+  width: 100%;
   margin: 50px;
 }
 .mainProduct_images {
@@ -115,6 +117,8 @@
 
 
 .mainProduct_info {
+  max-width: 50%;
+  width: 100%;
   margin-left: 20px;
 }
 
@@ -148,4 +152,16 @@
 }
 .amountField> span {
   margin: 10px 5px;
+}
+
+.productPage_btn {
+  width: 100%;
+  color: white;
+  background-color: #d8127d;
+  font-size: 1em;
+  padding: 20px;
+  border: none;
+  border-radius:10px ;
+  margin-top: 10px;
+  cursor: pointer;
 }

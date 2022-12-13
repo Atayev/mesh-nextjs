@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
       const cartItem = findItem(state, action);
       cartItem
         ? cartItem.quantity++
-        : state.cart.push({ ...action.payload, quantity: 1 });
+        : state.cart.push({ ...action.payload, quantity: action.payload.quantity});
     },
     incQuantity: (state, action) => {
       const item = findItem(state, action);

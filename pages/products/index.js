@@ -34,18 +34,16 @@ const Products = ({ products }) => {
         alignItems="center"
       >
         {products?.map((product) => (
-          <Link href={`/products/${product._id}`} className={styles.link}>
           <ProductItem
             key={product._id}
             id={product._id}
-            imageUrl={product.images}
+            images={product.images}
             title={product.title}
             price={product.price.azn}
             defaultColor={product.defaultColor}
             defaultSize={product.defaultSize}
             variants={product.variants}
           />
-          </Link>
         ))}
       </Box>
     </Container>
