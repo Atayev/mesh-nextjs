@@ -60,7 +60,7 @@
   color: white;
 }
 
-.productItemNav>svg:hover {
+.productItemNav > svg:hover {
   color: #333;
 }
 
@@ -76,4 +76,28 @@
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 0 15px 0 rgb(0 0 0 / 15%);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 24px;
+  padding: 4px;
+}
+.modalTitle {
+  border-bottom: 1px solid black;
+}
+.formLabel {
+  color: black;
+  font-size: 1em;
+}
+
+.link {
+  width: 100%;
+  display: contents;
 }

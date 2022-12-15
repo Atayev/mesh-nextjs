@@ -1,16 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import pageSlice from "./slices/pageSlice";
-import storage from "redux-persist/lib/storage";
 import cartSlice from "./slices/cartSlice";
+import storage from "redux-persist/lib/storage";
+
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
 } from "redux-persist";
 
 const persistConfig = {

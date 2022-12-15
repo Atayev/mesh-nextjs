@@ -1,4 +1,4 @@
-import { model, models, Schema } from "mongoose";
+import { models, model, Schema } from "mongoose";
 
 const ProductSchema = new Schema({
   title: String,
@@ -7,8 +7,9 @@ const ProductSchema = new Schema({
   category: String,
   subcategory: String,
   stock: Number,
-  color: Array,
-  size: Array,
+  defaultSize: String,
+  defaultColor: String,
+  variants: Array,
 });
 
 const Product = models?.Product || model("Product", ProductSchema);
